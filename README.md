@@ -10,12 +10,10 @@
     - In your terminal run `$ npm init` to initialize a new Node.js project.
 
 2. Create a ``.gitignore`` file in the root directory and add the following lines to it:
-
 ```
 node_modules
 .env
 ```
-
 3. Install the following dependencies:
 ```
 $ npm i express dotenv mongoose colors
