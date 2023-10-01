@@ -10,3 +10,4 @@
 **All the routes, controllers and models will be located in this folder.** 
 
 2. Create a file in the `backend` folder named `server.js`
+3. In your terminal run `npm init` to initialize a new Node.js project.

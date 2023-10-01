@@ -1,0 +1,11 @@
+{
+  "name": "mern-tutorial-v1",
+  "version": "1.0.0",
+  "description": "MERN Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Onelio Viera",
+  "license": "ISC"
+}
