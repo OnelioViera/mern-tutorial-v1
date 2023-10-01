@@ -1,6 +1,5 @@
 # MERN Tutorial-v1
-
-##Backend Development
+## Backend Development
 
 1. Open a terminal and create a new directory for the project called `mern-tutorial` and `cd` into it.  
 
