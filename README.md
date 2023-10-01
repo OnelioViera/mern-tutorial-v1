@@ -1,12 +1,22 @@
 # MERN Tutorial-v1
 ## Backend Development
 
-1. Open a terminal and create a new directory for the project called `mern-tutorial` and `cd` into it.  
-
-    - Next, `cd` into the new directory and open it in your coder.
+1. Open a terminal and create a new directory for the project called `mern-tutorial` and `cd` into it and open in your coder.  
     - Create a file named `backend` in the `root directory`.
 
-**All the routes, controllers and models will be located in this folder.** 
+    **(All the routes, controllers and models will be located in this folder.)** 
 
-2. Create a file in the `backend` folder named `server.js`
-3. In your terminal run `npm init` to initialize a new Node.js project.
+    - Create a file in the `backend` folder named `server.js`
+    - In your terminal run `$ npm init` to initialize a new Node.js project.
+
+2. Create a ``.gitignore`` file in the root directory and add the following lines to it:
+
+```
+node_modules
+.env
+```
+
+3. Install the following dependencies:
+```
+$ npm i express dotenv mongoose colors
+```
