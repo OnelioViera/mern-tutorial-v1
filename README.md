@@ -18,3 +18,11 @@ node_modules
 ```
 $ npm i express dotenv mongoose colors
 ```
+```
+$ npm i -D nodemon
+```
+4. Open the `package.json` file and remove the current lines from the `scripts` object and add the following lines:
+```json
+"start": "node backend/server.js",
+"server": "nodemon backend/server.js",
+```
