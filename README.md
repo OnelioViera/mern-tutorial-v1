@@ -98,3 +98,33 @@ app.listen(port, () => console.log(`Server is running on port ${port}`))
 }
 ```
 5. Create a `routes` folder in the `backend` folder and create a file named `goalRoutes.js` in the `routes` folder.
+
+6. Remove the `app.get` route from the `server.js` file and add the following code to the `goalRoutes.js` file:
+```js
+const express = require('express') // import express
+const router = express.Router() // import express router
+
+router.get('/', (req, res) => {
+  res.status(200).json({message: 'Get goals'})
+}) // create a GET route
+
+module.exports = router // export the router
+```
+7. Change the `server.js` file to the following code:
+```js
+const express = require('express') // import express
+const dotenv = require('dotenv').config() // import dotenv to use .env file for environment variables
+const port = process.env.PORT || 5000 // set port to 5000 or whatever is in .env file
+
+const app = express() // create express app and initialize it
+
+app.use('/api/goals', require('./routes/goalRoutes')) // use goalRoutes.js for /api/goals
+
+app.listen(port, () => console.log(`Server is running on port ${port}`))
+```
+8. Now make a GET request to `http://localhost:5000/api/goals` and you should see the following in the response:
+```json
+{
+  "message": "Get goals"
+}
+```
