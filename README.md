@@ -86,7 +86,7 @@ const port = process.env.PORT || 5000 // set port to 5000 or whatever is in .env
 const app = express() // create express app and initialize it
 
 app.get('/api/goals', (req, res) => {
-  res.json({message: 'Get goals'})
+  res.status(200).json({message: 'Get goals'})
 })
 
 app.listen(port, () => console.log(`Server is running on port ${port}`))
@@ -97,3 +97,4 @@ app.listen(port, () => console.log(`Server is running on port ${port}`))
   "message": "Get goals"
 }
 ```
+5. Create a `routes` folder in the `backend` folder and create a file named `goalRoutes.js` in the `routes` folder.
