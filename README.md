@@ -75,4 +75,4 @@ app.get('/api/goals', (req, res) => {
 
 app.listen(port, () => console.log(`Server is running on port ${port}`))
 ```
-2. Open up Postman and make a GET request to `http://localhost:5000/api/goals` and you should see `Get goals` in the response.
+2. Open up Postman and make a GET request to `http://localhost:5000/api/goals` and you should see `Get goals` in the response and a status 200 OK.
