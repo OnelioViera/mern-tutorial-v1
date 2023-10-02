@@ -128,3 +128,14 @@ app.listen(port, () => console.log(`Server is running on port ${port}`))
   "message": "Get goals"
 }
 ```
+9. Create a `routes` folder in the `backend` folder and create a file named `goalController.js` in the `routes` folder.  Add the following code to the `goalController.js` file to create a controller for the `GET` route:
+```js
+const express = require('express')
+const router = express.Router()
+
+router.get('/', (req, res) => {
+  res.status(200).json({message: 'Get goals'})
+})
+
+module.exports = router
+```
