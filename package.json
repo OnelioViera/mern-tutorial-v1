@@ -1,10 +1,10 @@
 {
   "name": "mern-tutorial-v1",
-  "version": "1.0.0",
+  "version": "1.v1.0",
   "description": "MERN Project",
   "main": "server.js",
   "scripts": {
-    "start": "node backend/server,js",
+    "start": "node backend/server.js",
     "server": "nodemon backend/server.js"
   },
   "author": "Onelio Viera",
