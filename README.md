@@ -45,3 +45,13 @@ const app = express() // create express app and initialize it
 app.listen(port, () => console.log(`Server is running on port ${port}`))
 ```
 9. Run `$ npm run server` in the terminal and you will see "Server is running on port 5000".
+
+10. Create a `.env` file in the root directory and add the following lines to it:
+```js
+NODE_ENV = development
+PORT = 8000
+```
+11. Replace the `port` variable in the `server.js` file with the following code:
+```js
+const port = process.env.PORT || 5000
+```
