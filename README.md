@@ -26,3 +26,11 @@ $ npm i -D nodemon
 "start": "node backend/server.js",
 "server": "nodemon backend/server.js"
 ```
+5. Add the following line to your `server.js` file:
+```js
+console.log('Hello World');
+```
+6. In your terminal run `$ npm run server` to start the server using nodemon to run the `server.js` file. You should see `Hello World` in the terminal.
+
+7. Create a Git repository using `git init` and push your code to GitHub.
+
