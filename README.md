@@ -1,7 +1,7 @@
 # MERN Tutorial-v1
 ## Backend Development
 
-1. Open a terminal and create a new directory for the project called `mern-tutorial` and `cd` into it and open in your coder.  
+1. Open a terminal and create a new directory for the project called `mern-tutorial` and `cd` into it and open it in your coder.  
     - Create a file named `backend` in the `root directory`.
 
     **(All the routes, controllers and models will be located in this folder.)** 
@@ -57,7 +57,7 @@ const port = process.env.PORT || 5000
 ```
 12. Running `$ npm run server` in the terminal will now show "**Server is running on port 8000**".
 
-13. Change the `port` variable back to `5000` in the `server.js` file, because we will be using port `8000` for the frontend.
+13. Change the `port` variable back to `5000` in the `server.js` file, because port `8000` will be used for the frontend.
 
 ### Creating Routes
 
