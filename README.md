@@ -34,3 +34,14 @@ console.log('Hello World');
 
 7. Create a Git repository using `git init` and push your code to GitHub.
 
+8. Clear the `server.js` file and replace with the following code:
+```js
+const express = require('express') // import express
+const dotenv = require('dotenv').config // import dotenv to use .env file for environment variables
+const port = 5000 // set port to 5000
+
+const app = express() // create express app and initialize it
+
+app.listen(port, () => console.log(`Server is running on port ${port}`))
+```
+9. Run `$ npm run server` in the terminal and you will see "Server is running on port 5000".
