@@ -37,14 +37,14 @@ console.log('Hello World');
 8. Clear the `server.js` file and replace with the following code:
 ```js
 const express = require('express') // import express
-const dotenv = require('dotenv').config // import dotenv to use .env file for environment variables
+const dotenv = require('dotenv').config() // import dotenv to use .env file for environment variables
 const port = 5000 // set port to 5000
 
 const app = express() // create express app and initialize it
 
 app.listen(port, () => console.log(`Server is running on port ${port}`))
 ```
-9. Run `$ npm run server` in the terminal and you will see "Server is running on port 5000".
+9. Run `$ npm run server` in the terminal and you will see "**Server is running on port 5000**".
 
 10. Create a `.env` file in the root directory and add the following lines to it:
 ```js
@@ -55,3 +55,24 @@ PORT = 8000
 ```js
 const port = process.env.PORT || 5000
 ```
+12. Running `$ npm run server` in the terminal will now show "**Server is running on port 8000**".
+
+13. Change the `port` variable back to `5000` in the `server.js` file, because we will be using port `8000` for the frontend.
+
+### Creating Routes
+
+1. Replace the code in the `server.js` file with the following code:
+```js
+const express = require('express') // import express
+const dotenv = require('dotenv').config() // import dotenv to use .env file for environment variables
+const port = process.env.PORT || 5000 // set port to 5000 or whatever is in .env file
+
+const app = express() // create express app and initialize it
+
+app.get('/api/goals', (req, res) => {
+  res.send('Get goals')
+})
+
+app.listen(port, () => console.log(`Server is running on port ${port}`))
+```
+2. Open up Postman and make a GET request to `http://localhost:5000/api/goals` and you should see `Get goals` in the response.
