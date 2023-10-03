@@ -139,3 +139,58 @@ router.get('/', (req, res) => {
 
 module.exports = router
 ```
+When you make a GET request to `http://localhost:5000/api/goals` you should see the following in the response:
+```json
+{
+  "message": "Get goals"
+}
+```
+10. Modify the `goalRouters.js` file to the following code to include the get, post, put and delete routes:
+```js
+const express = require('express')
+const router = express.Router()
+
+router.get('/', (req, res) => {
+  res.status(200).json({message: 'Get goal'})
+})
+
+router.post('/', (req, res) => {
+  res.status(200).json({message: 'Set goal'})
+})
+
+router.put('/:id', (req, res) => {
+  res.status(200).json({message: `Update goal ${req.params.id}`})
+})
+
+router.delete('/:id', (req, res) => {
+  res.status(200).json({message: `Delete goal ${req.params.id}`})
+})
+
+module.exports = router
+```
+
+11. Now make a GET request to `http://localhost:5000/api/goals` and you should see the following in the response:
+```json
+{
+  "message": "Get goal"
+}
+```
+12. Now make a POST request to `http://localhost:5000/api/goals` and you should see the following in the response:
+```json
+{
+  "message": "Set goal"
+}
+```
+
+13. Now make a PUT request to `http://localhost:5000/api/goals/1` and you should see the following in the response:
+```json
+{
+  "message": "Update goal 1"
+}
+```
+14. Now make a DELETE request to `http://localhost:5000/api/goals/1` and you should see the following in the response:
+```json
+{
+  "message": "Delete goal 1"
+}
+```
