@@ -168,8 +168,9 @@ router.delete('/:id', (req, res) => {
 
 module.exports = router
 ```
+Using Postman you can test the routes.
 
-11. Now make a GET request to `http://localhost:5000/api/goals` and you should see the following in the response:
+11. Make a GET request to `http://localhost:5000/api/goals` and you should see the following in the response:
 ```json
 {
   "message": "Get goal"
