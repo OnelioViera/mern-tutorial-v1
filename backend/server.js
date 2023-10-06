@@ -6,4 +6,4 @@ const app = express() // create express app and initialize it
 
 app.use('/api/goals', require('./routes/goalRoutes')) // use goalRoutes.js for /api/goals
 
-app.listen(port, () => console.log(`Server is running on port ${port}`))
+app.listen(port, () => console.log(`Server is running on port ${port}`)) // listen on port and log message to console
