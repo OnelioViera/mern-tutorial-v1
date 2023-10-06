@@ -195,3 +195,57 @@ Using Postman you can test the routes.
   "message": "Delete goal 1"
 }
 ```
+15. Create a `controllers` folder in the `backend` folder and create a file named `goalController.js` in the `controllers` folder.  Add the following code to the `goalController.js` file to create a controller for the `GET`, `POST`, `PUT`, and `DELETE` routes:
+```js
+// @desc Get all goals
+// @route GET /api/goals
+// @access Private
+const getGoals = (req, res) => {
+  res.status(200).json({message: 'Get all goals'})
+}
+
+// @desc  Set goal
+// @route POST /api/goals
+// @access Private
+const setGoal = (req, res) => {
+  res.status(200).json({message: 'Set goals'})
+}
+
+// @desc Update goal
+// @route PUT /api/goals/:id
+// @access Private
+const updateGoal = (req, res) => {
+  res.status(200).json({message: `Update goal ${req.params.id}`})
+}
+
+// @desc Delete goal
+// @route DELETE /api/goals/:id
+// @access Private
+const deleteGoal = (req, res) => {
+  res.status(200).json({message: `Delete goal ${req.params.id}`})
+}
+
+module.exports = {
+  getGoals,
+  setGoal,
+  updateGoal,
+  deleteGoal,
+}
+```
+16. Now modify the `goalRouters.js` file to the following code to include the get, post, put and delete routes:
+```js
+const express = require('express') // Import express
+const router = express.Router() // Make router
+const { 
+  getGoals, 
+  setGoal, 
+  updateGoal, 
+  deleteGoal 
+} = require('../controllers/goalController') // Import controller
+
+router.route('/').get(getGoals).post(setGoal) // Get all goals and create new goal
+
+router.route('/:id').delete(deleteGoal).put(updateGoal) // Delete goal and update goal
+
+module.exports = router // Export router
+```

@@ -1,20 +1,14 @@
-const express = require('express')
-const router = express.Router()
+const express = require('express') // Import express
+const router = express.Router() // Make router
+const { 
+  getGoals, 
+  setGoal, 
+  updateGoal, 
+  deleteGoal 
+} = require('../controllers/goalController') // Import controller
 
-router.get('/', (req, res) => {
-  res.status(200).json({message: 'Get goal'})
-})
+router.route('/').get(getGoals).post(setGoal) // Get all goals and create new goal
 
-router.post('/', (req, res) => {
-  res.status(200).json({message: 'Set goal'})
-})
+router.route('/:id').delete(deleteGoal).put(updateGoal) // Delete goal and update goal
 
-router.put('/:id', (req, res) => {
-  res.status(200).json({message: `Update goal ${req.params.id}`})
-})
-
-router.delete('/:id', (req, res) => {
-  res.status(200).json({message: `Delete goal ${req.params.id}`})
-})
-
-module.exports = router
+module.exports = router // Export router
