@@ -10,7 +10,6 @@
 <li><a href="https://chrisyeh96.github.io/2020/03/28/terminal-colors.html">colors</a></li>
 <li><a href="https://www.npmjs.com/package/nodemon">nodemon</a></li>
 </details>
-<br>
 <details>
 <summary>Backend Folder Structure</summary>
 </details>
