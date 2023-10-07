@@ -5,12 +5,14 @@
 
 <details>
 <summary>Backend Environment setup and Dependencies</summary>
-<li><a href="https://nodejs.org/en" {target="_blank"}>Node.js</a></li>
-<li><a href="https://expressjs.com/">Express</a></li>
-<li><a href="https://www.npmjs.com/package/dotenv">dotenv</a></li>
-<li><a href="https://mongoosejs.com/">mongoose</a></li>
-<li><a href="https://chrisyeh96.github.io/2020/03/28/terminal-colors.html">colors</a></li>
-<li><a href="https://www.npmjs.com/package/nodemon">nodemon</a></li>
+<ul>
+<li><a href="https://nodejs.org/en" target="_blank">Node.js</a></li>
+<li><a href="https://expressjs.com/" target="_blank">Express</a></li>
+<li><a href="https://www.npmjs.com/package/dotenv" target="_blank">dotenv</a></li>
+<li><a href="https://mongoosejs.com/" target="_blank">mongoose</a></li>
+<li><a href="https://chrisyeh96.github.io/2020/03/28/terminal-colors.html" target="_blank">colors</a></li>
+<li><a href="https://www.npmjs.com/package/nodemon" target="_blank">nodemon</a></li>
+</ul>
 </details>
 
 <details>
