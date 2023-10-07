@@ -1,6 +1,21 @@
 # MERN Tutorial-v1
 ## Backend Development
 
+<details>
+<summary>Backend Environment setup and Dependencies</summary>
+<li><a href="https://nodejs.org/en" target="_blank">Node.js</a></li>
+<li><a href="https://expressjs.com/">Express</a></li>
+<li><a href="https://www.npmjs.com/package/dotenv">dotenv</a></li>
+<li><a href="https://mongoosejs.com/">mongoose</a></li>
+<li><a href="https://chrisyeh96.github.io/2020/03/28/terminal-colors.html">colors</a></li>
+<li><a href="https://www.npmjs.com/package/nodemon">nodemon</a></li>
+</details>
+<br>
+<details>
+<summary>Backend Folder Structure</summary>
+</details>
+<br>
+
 1. Open a terminal and create a new directory for the project called `mern-tutorial` and `cd` into it and open it in your coder.  
     - Create a file named `backend` in the `root directory`.
 
