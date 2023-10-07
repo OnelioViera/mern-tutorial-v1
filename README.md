@@ -249,3 +249,41 @@ router.route('/:id').delete(deleteGoal).put(updateGoal) // Delete goal and updat
 
 module.exports = router // Export router
 ```
+
+17. Update the `server.js` file to the following code:
+```js
+const express = require('express') // import express
+const dotenv = require('dotenv').config() // import dotenv to use .env file for environment variables
+const port = process.env.PORT || 5000 // set port to 5000 or whatever is in .env file
+
+const app = express() // create express app and initialize it
+
+app.use('/api/goals', require('./routes/goalRoutes')) // use goalRoutes.js for /api/goals
+
+app.listen(port, () => console.log(`Server is running on port ${port}`)) // listen on port and log message to console
+```
+18. Now make a GET request to `http://localhost:5000/api/goals` and you should see the following in the response:
+```json
+{
+  "message": "Get all goals"
+}
+```
+19. Now make a POST request to `http://localhost:5000/api/goals` and you should see the following in the response:
+```json
+{
+  "message": "Set goals"
+}
+```
+20. Now make a PUT request to `http://localhost:5000/api/goals/1` and you should see the following in the response:
+```json
+{
+  "message": "Update goal 1"
+}
+```
+21. Now make a DELETE request to `http://localhost:5000/api/goals/1` and you should see the following in the response:
+```json
+{
+  "message": "Delete goal 1"
+}
+```
+
