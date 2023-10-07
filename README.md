@@ -10,10 +10,9 @@
 <li><a href="https://chrisyeh96.github.io/2020/03/28/terminal-colors.html">colors</a></li>
 <li><a href="https://www.npmjs.com/package/nodemon">nodemon</a></li>
 </details>
+
 <details>
-<summary>Backend Folder Structure</summary>
-</details>
-<br>
+<summary>Setup Backend Development</summary>
 
 1. Open a terminal and create a new directory for the project called `mern-tutorial` and `cd` into it and open it in your coder.  
     - Create a file named `backend` in the `root directory`.
@@ -72,8 +71,10 @@ const port = process.env.PORT || 5000
 12. Running `$ npm run server` in the terminal will now show "**Server is running on port 8000**".
 
 13. Change the `port` variable back to `5000` in the `server.js` file, because port `8000` will be used for the frontend.
+</details>
 
-### Creating Routes
+<details>
+<summary>Creating Routes</summary>
 
 1. Replace the code in the `server.js` file with the following code to test the routes:
 ```js
@@ -209,7 +210,12 @@ Using Postman you can test the routes.
   "message": "Delete goal 1"
 }
 ```
-15. Create a `controllers` folder in the `backend` folder and create a file named `goalController.js` in the `controllers` folder.  Add the following code to the `goalController.js` file to create a controller for the `GET`, `POST`, `PUT`, and `DELETE` routes:
+</details>
+
+<details>
+<summary>Creating Controllers</summary>
+
+1. Create a `controllers` folder in the `backend` folder and create a file named `goalController.js` in the `controllers` folder.  Add the following code to the `goalController.js` file to create a controller for the `GET`, `POST`, `PUT`, and `DELETE` routes:
 ```js
 // @desc Get all goals
 // @route GET /api/goals
@@ -246,7 +252,7 @@ module.exports = {
   deleteGoal,
 }
 ```
-16. Now modify the `goalRouters.js` file to the following code to include the get, post, put and delete routes:
+2. Now modify the `goalRouters.js` file to the following code to include the get, post, put and delete routes:
 ```js
 const express = require('express') // Import express
 const router = express.Router() // Make router
@@ -264,7 +270,7 @@ router.route('/:id').delete(deleteGoal).put(updateGoal) // Delete goal and updat
 module.exports = router // Export router
 ```
 
-17. Update the `server.js` file to the following code:
+3. Update the `server.js` file to the following code:
 ```js
 const express = require('express') // import express
 const dotenv = require('dotenv').config() // import dotenv to use .env file for environment variables
@@ -276,28 +282,58 @@ app.use('/api/goals', require('./routes/goalRoutes')) // use goalRoutes.js for /
 
 app.listen(port, () => console.log(`Server is running on port ${port}`)) // listen on port and log message to console
 ```
-18. Now make a GET request to `http://localhost:5000/api/goals` and you should see the following in the response:
+4. Now make a GET request to `http://localhost:5000/api/goals` and you should see the following in the response:
 ```json
 {
   "message": "Get all goals"
 }
 ```
-19. Now make a POST request to `http://localhost:5000/api/goals` and you should see the following in the response:
+5. Now make a POST request to `http://localhost:5000/api/goals` and you should see the following in the response:
 ```json
 {
   "message": "Set goals"
 }
 ```
-20. Now make a PUT request to `http://localhost:5000/api/goals/1` and you should see the following in the response:
+6. Now make a PUT request to `http://localhost:5000/api/goals/1` and you should see the following in the response:
 ```json
 {
   "message": "Update goal 1"
 }
 ```
-21. Now make a DELETE request to `http://localhost:5000/api/goals/1` and you should see the following in the response:
+7. Now make a DELETE request to `http://localhost:5000/api/goals/1` and you should see the following in the response:
 ```json
 {
   "message": "Delete goal 1"
 }
 ```
+</details>
+
+<details>
+<summary>Creating Middleware</summary>
+
+1. Create a folder named `middleware` in the backend folder.  In the `middleware` folder add a `errorMiddleware.js` file and add the following code to it:
+```js
+const errorHandler = (err, req, res, next) => {
+  const statusCode = res.statusCode ? res.statusCode : 500
+
+  res.status(statusCode)
+  res.json({
+    message: err.message,
+    stack: process.env.NODE_ENV === 'production' ? null : err.stack,
+  })
+}
+
+module.exports = {
+  errorHandler,
+}
+```
+</details>
+
+<details>
+<summary>Connect to MongoDB</summary>
+</details>
+
+<details>
+<summary>Creating Models</summary>
+</details>
 
