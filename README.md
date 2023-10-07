@@ -1,3 +1,5 @@
+![MERN](https://miro.medium.com/v2/0*hU4zJiyVwWcM0L-w.png)
+
 # MERN Tutorial-v1
 ## Backend Development
 
