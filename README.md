@@ -5,7 +5,7 @@
 
 <details>
 <summary>Backend Environment setup and Dependencies</summary>
-<li><a href="https://nodejs.org/en" {:target="_blank"}>Node.js</a></li>
+<li><a href="https://nodejs.org/en" {target="_blank"}>Node.js</a></li>
 <li><a href="https://expressjs.com/">Express</a></li>
 <li><a href="https://www.npmjs.com/package/dotenv">dotenv</a></li>
 <li><a href="https://mongoosejs.com/">mongoose</a></li>
