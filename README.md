@@ -331,6 +331,28 @@ module.exports = {
   errorHandler,
 }
 ```
+2. Update the `server.js` file to the following code:
+```js
+const express = require('express') // import express
+const colors = require('colors') // import colors to use colors in console
+const dotenv = require('dotenv').config() // import dotenv to use .env file for environment variables
+const { errorHandler } = require('./middleware/errorMiddleware') // import errorHandler from errorMiddleware.js
+const connectDB = require('./config/db') // import connectDB from db.js
+const port = process.env.PORT || 5000 // set port to 5000 or whatever is in .env file
+
+connectDB() // connect to database
+
+const app = express() // create express app and initialize it
+
+app.use(express.json()) // use express.json() to parse json data  
+app.use(express.urlencoded({extended: false})) // use express.urlencoded() to parse urlencoded data
+
+app.use('/api/goals', require('./routes/goalRoutes')) // use goalRoutes.js for /api/goals
+
+app.use(errorHandler) // use errorHandler to handle errors
+
+app.listen(port, () => console.log(`Server is running on port ${port}`)) // listen on port and log message to console
+```
 </details>
 
 <details>
@@ -340,5 +362,49 @@ module.exports = {
 <details>
 <summary>Creating Models</summary>
 </details>
+
+3. Run the following line `npm i espress-async-handler` in the terminal to in stall `asyncHandler`. Also update the `controllers/goalController.js` file to the following code:
+```js
+const asyncHandler = require('express-async-handler')
+
+// @desc Get all goals
+// @route GET /api/goals
+// @access Private
+const getGoals = asyncHandler(async (req, res) => {
+  res.status(200).json({message: 'Get all goals'})
+})
+
+// @desc  Set goal
+// @route POST /api/goals
+// @access Private
+const setGoal = asyncHandler(async (req, res) => { // asyncHandler wraps async functions so that errors can be handled with errorHandler
+  if(!req.body.text) { // if text field is empty
+    res.status(400) // express sets status code to 200 by default
+    throw new Error('Please add a text field') // throw error to be handled by error middleware
+  }
+  res.status(200).json({message: 'Set goals'}) // send json response
+})
+
+// @desc Update goal
+// @route PUT /api/goals/:id
+// @access Private
+const updateGoal = asyncHandler(async (req, res) => {
+  res.status(200).json({message: `Update goal ${req.params.id}`})
+})
+
+// @desc Delete goal
+// @route DELETE /api/goals/:id
+// @access Private
+const deleteGoal = asyncHandler(async (req, res) => {
+  res.status(200).json({message: `Delete goal ${req.params.id}`})
+})
+
+module.exports = {
+  getGoals,
+  setGoal,
+  updateGoal,
+  deleteGoal,
+}
+```
 
 ## Frontend Development

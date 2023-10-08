@@ -10,12 +10,12 @@ const getGoals = asyncHandler(async (req, res) => {
 // @desc  Set goal
 // @route POST /api/goals
 // @access Private
-const setGoal = asyncHandler(async (req, res) => {
-  if(!req.body.text) {
-    res.status(400)
-    throw new Error('Please add a text field')
+const setGoal = asyncHandler(async (req, res) => { // asyncHandler wraps async functions so that errors can be handled with errorHandler
+  if(!req.body.text) { // if text field is empty
+    res.status(400) // express sets status code to 200 by default
+    throw new Error('Please add a text field') // throw error to be handled by error middleware
   }
-  res.status(200).json({message: 'Set goals'})
+  res.status(200).json({message: 'Set goals'}) // send json response
 })
 
 // @desc Update goal
