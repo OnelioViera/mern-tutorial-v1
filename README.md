@@ -353,15 +353,6 @@ app.use(errorHandler) // use errorHandler to handle errors
 
 app.listen(port, () => console.log(`Server is running on port ${port}`)) // listen on port and log message to console
 ```
-</details>
-
-<details>
-<summary>Connect to MongoDB</summary>
-</details>
-
-<details>
-<summary>Creating Models</summary>
-</details>
 
 3. Run the following line `npm i espress-async-handler` in the terminal to in stall `asyncHandler`. Also update the `controllers/goalController.js` file to the following code:
 ```js
@@ -406,5 +397,16 @@ module.exports = {
   deleteGoal,
 }
 ```
+</details>
+
+<details>
+<summary>Connect to MongoDB</summary>
+</details>
+
+<details>
+<summary>Creating Models</summary>
+</details>
+
+
 
 ## Frontend Development
