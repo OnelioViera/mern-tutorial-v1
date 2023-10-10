@@ -401,12 +401,47 @@ module.exports = {
 
 <details>
 <summary>Connect to MongoDB</summary>
+
+1. Once you have created a mongoDB Atlas project, create a `config` folder in the `backend` folder and create a file named `db.js` in the `config` folder.  Add the following code to the `db.js` file:
+```js
+const mongoose = require('mongoose') // Import mongoose to use it for database connection
+
+const connectDB = async () => {
+  try {
+    const conn = await mongoose.connect(process.env.MONGO_URI) // Connect to database
+
+    console.log(`MongoDb connected: ${conn.connection.host}`.cyan.underline) // Log message to console
+  } catch (error) {
+    console.log('error') // Log error
+    process.exit(1) // Exit with failure
+  }
+}
+
+module.exports = connectDB // Export connectDB function to use in server.js
+```
 </details>
 
 <details>
+
 <summary>Creating Models</summary>
+
+1. Create a `models` folder in the `backend` folder and create a file named `goalModel.js` in the `models` folder.  Add the following code to the `goalModel.js` file:
+```js
+const mongoose = require('mongoose') // Import mongoose
+
+const goalSchema = mongoose.Schema( // Create schema
+  {
+    text: {
+      type: String,
+      requires: [true, 'Please add a text field']
+    }
+  },
+  {
+    timestamps: true
+  }) // Create timestamps
+
+module.exports = mongoose.model('Goal', goalSchema) // Export model
+```
 </details>
-
-
 
 ## Frontend Development
