@@ -4,11 +4,9 @@ const goalSchema = mongoose.Schema(
   {
     text: {
       type: String,
-      requires: [true, 'Please add a text field']
+      required: [true, 'Please add a text field']
     }
   },
-  {
-    timestamps: true
-  })
+  {timestamps: true})
 
 module.exports = mongoose.model('Goal', goalSchema)
